@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unapologetic</title>
+  </head>
+  <body>
+
+    <div id = "featured-post" style="text-align: center; padding-top: 35px;">
+      <%= image_tag Post.last.featured_image, style:'max-width: 700px; height: auto'%>
+      <h1 class="featured_title" style="padding-top: 15px; color: pink;"><%= Post.last.title %></h1>
+      <div class="featured_content" style="padding: 0px 100px; width: 800px; margin: 0 auto;"><%= Post.last.content %></div>
+    </div>
+
+<div id="section-title" class="section-title-left"style="width: 70%;"></div>
+<div id="two-column-grid">
+<% @posts.each do |post| %>
+<div class="column-one" style="width: 350px;">
+<h2 class="caption"><%= post.title %></h2>
+<div id="thumbnail">
+<%= image_tag post.featured_image, :class=>"thumbnail"%></div>
+<div class="two-column-excerpt"><%= truncate(Post.last.content, length: 200) %></div>
+<% end %>
+</div>
+</div>
+  </body>
+</html>

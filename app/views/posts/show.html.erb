@@ -1,0 +1,5 @@
+<h2 style="text-align: center;"> <%= @post.title %></h2>
+<div id = "featured-image" style="text-align: center;"> 
+<%= image_tag @post.featured_image, width:"700", height:"auto" %></div>
+
+<p style="text-align: justify; padding: 0 50px;" > <%= @post.content%> </p>

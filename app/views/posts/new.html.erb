@@ -1,0 +1,34 @@
+<h1> Create New Post </h1>
+
+<div id = "form">
+<%= form_for :post, url: posts_path do |f| %>
+
+<p>
+<%=f.label :title%> <br>
+<%= f.text_field :title%>
+</p>
+
+<p>
+<%=f.label :featured_image %><br>
+<%=f.text_field :featured_image %>
+</p>
+
+<p>
+<%=f.label :featured_video %><br>
+<%=f.text_field :featured_video %>
+</p>
+
+<p>
+<%=f.label :content %><br>
+<%=f.text_field :content %>
+</p>
+
+<p>
+<%=f.label :category %><br>
+<%=f.text_field :category %>
+</p>
+<div class="form-submit">
+<%= f.submit %>
+</div>
+<%end%>
+</div>
