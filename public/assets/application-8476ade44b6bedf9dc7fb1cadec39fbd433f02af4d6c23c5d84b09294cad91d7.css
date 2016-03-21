@@ -1,0 +1,189 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+input {
+ width: 55%;
+ padding: 13px;
+   }
+
+input[type=text] {
+font-size: 14px;
+text-align: left;
+}
+
+ input[type=submit] {
+  width: 80px;
+  padding: 8px;
+  background-color: pink;
+   }
+
+#logo {
+  margin: 0 auto;
+  width: 288px;
+  height: 288px;
+}
+
+#featured-image img, #featured-post img {
+  border-image: url(http://liveunapologetically.com/wp-content/uploads/2013/08/unapologetic-border.png) 18% 11% stretch;
+  border-width: 93px;
+}
+#thumbnail {
+position: relative;
+width: 350px;
+height: 300px;
+overflow: hidden;
+}
+
+#two-column-grid {
+ margin-top: 150px;
+ border-top: 2px solid black;
+}
+.thumbnail {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.column-one {
+  margin-top: 10px;
+}
+
+.caption {
+  width: 350px;
+  background-color: rgba(0, 0, 0, .8);
+  padding: 10px 0;
+  color: pink;
+  text-align: center;
+  margin-top: 0px;
+  z-index: 10;
+  position: absolute;
+
+}
+.two-column-excerpt {
+  text-align: justify;
+}
+
+ #cssmenu {
+   width: auto;
+ }
+ #cssmenu ul {
+   list-style: none;
+   text-align: center;
+ }
+ #cssmenu ul:after {
+   content: " ";
+   display: block;
+   font-size: 0;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+ }
+ #cssmenu ul li {
+   display: inline-block;
+   padding: 0;
+   margin: 0;
+ }
+ #cssmenu.align-right ul li {
+   float: right;
+ }
+ #cssmenu.align-center ul {
+   text-align: center;
+ }
+ #cssmenu ul li a {
+   color: #ffffff;
+   text-decoration: none;
+   display: block;
+   padding: 15px 15px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 14px;
+   margin: 0 5px;
+   position: relative;
+   -webkit-transition: color .25s;
+   -moz-transition: color .25s;
+   -ms-transition: color .25s;
+   -o-transition: color .25s;
+   transition: color .25s;
+ }
+ #cssmenu ul li a:hover {
+   color: #333333;
+ }
+ #cssmenu ul li a:hover:before {
+   width: 100%;
+ }
+ #cssmenu ul li a:after {
+   content: "";
+   display: block;
+   position: absolute;
+   right: -3px;
+   top: 19px;
+   height: 6px;
+   width: 6px;
+   background: #ffffff;
+   opacity: .5;
+ }
+ #cssmenu ul li a:before {
+   content: "";
+   display: block;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   height: 2px;
+   width: 0;
+   background: mistyrose;
+   -webkit-transition: width .25s;
+   -moz-transition: width .25s;
+   -ms-transition: width .25s;
+   -o-transition: width .25s;
+   transition: width .25s;
+ }
+ #cssmenu ul li.last > a:after,
+ #cssmenu ul li:last-child > a:after {
+   display: none;
+ }
+ #cssmenu ul li.active a {
+   color: #333333;
+ }
+ #cssmenu ul li.active a:before {
+   width: 100%;
+ }
+ #cssmenu.align-right li.last > a:after,
+ #cssmenu.align-right li:last-child > a:after {
+   display: block;
+ }
+ #cssmenu.align-right li:first-child a:after {
+   display: none;
+ }
+ @media screen and (max-width: 768px) {
+   #cssmenu ul li {
+     float: none;
+     display: block;
+ }
+   #cssmenu ul li a {
+     width: 100%;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     border-bottom: 1px solid gray;
+   }
+    }
