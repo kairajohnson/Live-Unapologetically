@@ -177,7 +177,7 @@ overflow: hidden;
    #cssmenu ul li {
      float: none;
      display: block;
-   }
+ }
    #cssmenu ul li a {
      width: 100%;
      -moz-box-sizing: border-box;
@@ -185,3 +185,4 @@ overflow: hidden;
      box-sizing: border-box;
      border-bottom: 1px solid gray;
    }
+    }
