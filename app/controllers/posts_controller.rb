@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
  def index
    @posts = Post.all
-   params.permit(:featured_image)
+   params.permit(:featured_image, :title, :content)
  end
 
  def new
@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
  def show
    @post = Post.find(params[:id])
+
  end
 
  def edit
