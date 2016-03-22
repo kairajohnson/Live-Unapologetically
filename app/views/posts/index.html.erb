@@ -12,16 +12,41 @@
       <div class="featured_content" style="padding: 0px 100px; width: 800px; margin: 0 auto;"><%= Post.last.content %></div>
     </div>
 
-<div id="section-title" class="section-title-left"style="width: 70%;"></div>
-<div id="two-column-grid">
-<% @posts.each do |post| %>
-<div class="column-one" style="width: 350px;">
-<h2 class="caption"><%= post.title %></h2>
-<div id="thumbnail">
-<%= image_tag post.featured_image, :class=>"thumbnail"%></div>
-<div class="two-column-excerpt"><%= truncate(Post.last.content, length: 200) %></div>
-<% end %>
+
+<div id="section-title" style="padding-top: 100px;">
+<h1 class="section-title-left"style="width: 70%;"> In Her Closet </h1>
+<h1 class="section-title-right"style="width: 30%;"> Recent Posts </h1>
 </div>
+
+<div id="main">
+
+  <table id="grid" style="width: 66.66%; float: left;">
+    <% @posts.in_groups_of(2, false) do |post_column| %>
+    <tr>
+        <% for post in post_column %>
+        <td class="grid-post" style="width: 33.33%;">
+          <h2 class="caption"><%= post.title %>
+          </h2>
+          <div id="thumbnail">
+          <%= image_tag post.featured_image, :class=>"thumbnail"%>
+          </div>
+          <p><%= truncate(Post.last.content, length: 200) %></p>
+        </td>
+        <% end %>
+      <tr>
+      <% end %>
+  </table>
+
+  <div id="sidebar" style="float: right;">
+    <div id="recent-posts">
+      <h2> Recent Posts </h2>
+      <table>
+        <tr>
+          <%= recent_posts %>
+        </tr>
+
+  </div>
 </div>
+
   </body>
 </html>
