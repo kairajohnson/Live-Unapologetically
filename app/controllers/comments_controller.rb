@@ -17,6 +17,7 @@ def edit
  @comment = Comment.find(params[:id])
 end
 
+
 def update
   @post = Post.find(params [:post_id])
   @comment = Comment.find(params[:id])
@@ -32,7 +33,7 @@ end
 
 private
 def comment_params
-  params.require(:comment).permit(:user_name, :user_email, :comment)
+  params.require(:comment).permit(:user_name, :user_email, :user_comment)
 end
 
 end
