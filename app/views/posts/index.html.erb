@@ -23,6 +23,7 @@
           <%= image_tag post.featured_image, :class=>"thumbnail"%>
           </div>
           <p><%= truncate(Post.last.content, length: 200) %></p>
+          <%= link_to "Read More", post_path(post) %>
         </td>
         <% end %>
       </tr>
