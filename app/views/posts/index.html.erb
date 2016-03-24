@@ -1,3 +1,4 @@
+
     <div id = "featured-post" style="text-align: center; padding-top: 35px;">
       <%= image_tag Post.last.featured_image, style:'max-width: 700px; height: auto'%>
       <h1 class="featured_title" style="padding-top: 15px; color: pink;"><%= Post.last.title %></h1>
@@ -6,13 +7,12 @@
 
 
 <div id="section-title" style="padding-top: 100px;">
-<h1 class="section-title-left"style="width: 70%;"> In Her Closet </h1>
-<h1 class="section-title-right"style="width: 30%;"> Recent Posts </h1>
+<h1 class="section-title-left"style="width: 66.66%;"> She's Unapologetic </h1>
+<h1 class="section-title-right"style="width: 33.33%;"> Recent Posts </h1>
 </div>
-
+<div id="wrapper">
 <div id="main">
-
-  <table id="grid" style="width: 66.66%; float: left;">
+<table id="grid">
     <% @posts.in_groups_of(2, false) do |post_column| %>
     <tr>
         <% for post in post_column %>
@@ -25,25 +25,65 @@
           <p><%= truncate(Post.last.content, length: 200) %></p>
         </td>
         <% end %>
-      <tr>
+      </tr>
       <% end %>
   </table>
 
-  <div id="sidebar" style="float: right;">
-    <div id="recent-posts">
-      <h2> Recent Posts </h2>
-      <table>
-        <tr>
+  <div id="monthly-topic">
+    <h2> Topic/Goal of the Month <h2>
+    <h1 style="color: black;"> Declutter your closet, declutter your life</h1>
+    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. </p>
+  </div>
+
+</div>
+    <div id="sidebar" style=" width: 33.42%; float: right;">
+      <div id="recent-posts">
+
+          <% @posts.each do |recent_posts| %>
+          <table>
+          <tr>
+            <td><div id= "thumbnail_small">
+              <%= image_tag recent_posts.featured_image, :class=>"thumbnail_small"%>
+            </td></div>
           <td>
-            <div id="thumbnail-small">
-            <%= image_tag post.featured_image, :class=>"thumbnail"%>
-            </div>
+            <h3><%= recent_posts.title %></h3>
+            <p style:"margin: 5px 0;"><%= truncate(Post.last.content, length: 150) %></p>
           </td>
-        <td>
-          <%= post.title %>
-          <p><%= truncate(Post.last.content, length: 100) %></p>
-        </td>
-      </tr>
-    </table>
+          <hr>
+        </tr>
+       <% end %>
+      </table>
+    </div>
+
+    <div id="sidebar-options">
+    <h2> Would You Like To: </h2>
+    <ul>
+      <li>CREATE A FUN & INEXPENSIVE LOOK</li>
+      <li>DEFINE YOUR OWN STYLE</li>
+      <li>SEE WHATS IN HER CLOSET</li>
+      <li> VIEW THIS SEASONS STYLE INSPIRATIONS</li>
+      <li>SNEAK A PEAK INTO MY LIFE</li>
+      <li>SHOP A LOOK THAT FITS YOUR STYLE</li>
+    </ul>
+  </div>
+</div>
+
+<h1 class="style-vault-section-title" style="width: 66.66%;"> Style Vault </h1>
+<div id="full-width-row">
+  <div id="style-vault">
+    <table id="grid">
+        <% @posts.in_groups_of(4, false) do |post_column| %>
+            <% for post in post_column %>
+            <td class="grid-post" style="width: 25%;">
+              <h2 class="caption"><%= post.title %>
+              </h2>
+              <div id="thumbnail">
+              <%= image_tag post.featured_image, :class=>"thumbnail"%>
+              </div>
+            </td>
+            <% end %>
+          <% end %>
+      </table>
+</div>
   </div>
 </div>

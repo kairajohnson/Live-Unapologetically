@@ -40,6 +40,16 @@ text-align: left;
   border-image: url(<%="http://liveunapologetically.com/wp-content/uploads/2013/08/unapologetic-border.png" %>) 18% 11% stretch;
   border-width: 93px;
 }
+
+#sidebar-options {
+  border-image: url(http://liveunapologetically.com/wp-content/uploads/2012/06/unapologeticvborder-e1429841197819.png) 14% 18% repeat;
+    border-width: 25px;
+    display: inline-block;
+    margin-top: 50px;
+    padding: 30px 0px 30px 26px;
+    width: 81%;
+    margin-left: 15px;
+}
 #thumbnail {
 position: relative;
 width: 100%;
@@ -48,11 +58,11 @@ overflow: hidden;
 margin-top: -67px;
 }
 
-#grid {
- margin-top: 68px;
- border-top: 2px solid black;
-}
 
+
+h1, h2, h3 {
+  color: pink;
+}
 
 .thumbnail {
   position: absolute;
@@ -66,9 +76,24 @@ margin-top: -67px;
   z-index: 1;
 }
 
-.thumbnail-small {
-  height: 200px;
-  width: 200px;
+#thumbnail_small {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  overflow: hidden;
+  margin: 5px 5px;
+}
+
+.thumbnail_small {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .grid-post {
@@ -101,6 +126,11 @@ float: left;
 color: pink;
 display: inline-block;
 text-align: center;
+border-bottom: 2px solid black;
+position: absolute;
+width: 66.66%;
+margin-bottom: 0px;
+
   }
 
 .section-title-right {
@@ -109,10 +139,55 @@ color: pink;
 display: inline-block;
 text-align: center;
 border-left: 2px solid black;
-position: absolute;
-padding-bottom: 10px;
+border-bottom: 2px solid black;
+width: 33.33%;
+margin-bottom: 0px;
   }
 
+.style-vault-section-title {
+  width: 66.66%;
+  border-right: 2px solid black;
+  padding-bottom: 15px;
+  display: inline-block;
+  text-align: center;
+  margin: 100px 0 0 0;
+  }
+
+#recent-posts h3 {
+  margin: 0px 0px;
+  }
+
+  #recent-posts p {
+  margin: 3px 0px;
+  }
+
+#recent-posts {
+  float: right;
+  padding: 0 2%;
+  border-left: 2px black solid;
+}
+  #each-post {
+  border-bottom: 2px solid black;
+  padding-top: 15px;
+  }
+
+ #main {
+   width: 66.58%;
+   float:left;
+ }
+
+ #monthly-topic {
+   border-top: 2px solid black;
+ }
+
+ #full-width-row {
+   display: inline-block;
+   width: 100%;
+   border-top: 2px solid black;
+ }
+ #grid {
+   width: 100%;
+ }
  #cssmenu {
    width: auto;
  }

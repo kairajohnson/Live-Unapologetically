@@ -1,0 +1,24 @@
+<h1> Post A Comment </h1>
+
+<div id = "form">
+<%= form_for :comment, url: new_post_comment_path do |f| %>
+
+<p>
+<%=f.label "Name"%> <br>
+<%= f.text_field :username%>
+</p>
+
+<p>
+<%=f.label "Email" %><br>
+<%=f.text_field :user_email %>
+</p>
+
+<p>Enter your comment <br>
+<%=f.text_area :user_comment %>
+</p>
+
+<div class="form-submit">
+<%= f.submit %>
+</div>
+<%end%>
+</div>
