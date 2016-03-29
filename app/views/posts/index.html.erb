@@ -1,4 +1,6 @@
+<!-- JGZ - be really careful about indenting here! -->
 
+<!-- JGZ - try to avoid in line styling like below. this should be in your css file! -->
     <div id = "featured-post" style="text-align: center; padding-top: 35px;">
       <%= image_tag Post.last.featured_image, style:'max-width: 700px; height: auto'%>
       <h1 class="featured_title" style="padding-top: 15px; color: pink;"><%= Post.last.title %></h1>
@@ -22,6 +24,8 @@
           <div id="thumbnail">
           <%= image_tag post.featured_image, :class=>"thumbnail"%>
           </div>
+          <!-- JGZ - Recommend not using classes in the html
+                It would be better to define this in the controller and then use something like @post -->
           <p><%= truncate(Post.last.content, length: 200) %></p>
           <%= link_to "Read More", post_path(post) %>
         </td>
@@ -31,18 +35,21 @@
   </table>
 
   <div id="monthly-topic">
+    <!-- JGZ - this might be better as something like another model in your db? seems like you wouldnt be able to change this easily.. -->
     <h2> Topic/Goal of the Month <h2>
     <h1 style="color: black;"> Declutter your closet, declutter your life</h1>
     <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. </p>
   </div>
 
 </div>
+
     <div id="sidebar" style=" width: 33.42%; float: right;">
       <div id="recent-posts">
 
           <% @posts.each do |recent_posts| %>
           <table>
           <tr>
+            <!-- JGZ - I'd highly recommend not having an ID and class be the same thing -->
             <td><div id= "thumbnail_small">
               <%= image_tag recent_posts.featured_image, :class=>"thumbnail_small"%>
             </td></div>

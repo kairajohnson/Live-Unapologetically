@@ -1,4 +1,4 @@
-
+<!-- JGZ - indenting! -->
 <div id = "featured-image" style="text-align: center;">
 <%= image_tag @post.featured_image, width:"700", height:"auto" %></div>
 <h2 style="text-align: center; padding-top: 3%;"> <%= @post.title %></h2>
@@ -11,5 +11,6 @@
 <p style="margin-top: 0px"><%= comment.user_comment %><p>
 <% end %>
 
+<!-- JGZ - nice! I thhought you made this so the form shows up here? push up those changes :) -->
 <h3 style="color: pink"> Add A <%= link_to "New Comment", new_post_comment_path(@post) %></h3>
 </div>
