@@ -11,11 +11,14 @@ class PostsController < ApplicationController
 
  def create
    @post = Post.create!(post_params)
+  #  JGZ - dont think this is necessary below
    @post.save
    redirect_to @post
  end
 
  def show
+  #  JGZ - notice that you're repeating this same line a bunch of times! I'd ncourage you
+  # to investigate how to set this "before" any of these methods
    @post = Post.find(params[:id])
    @comments = @post.comments
  end
@@ -35,6 +38,7 @@ class PostsController < ApplicationController
  def destroy
    @post = Post.find(params[:id])
    @post.destroy
+  #  JGZ - would this work? you are trying to redirect to all posts, but then you're passing in a specific post..
    redirect_to posts_path(@post)
  end
 
